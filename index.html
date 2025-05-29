@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Posyandu Melati 2 Kelurahan Mawang</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f0f9f9;
+      color: #004d40;
+      line-height: 1.6;
+    }
+    header {
+      background: #00796b;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 600;
+      font-size: 2.5rem;
+      letter-spacing: 1.5px;
+    }
+    header p {
+      margin-top: 0.6rem;
+      font-size: 1.2rem;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+    nav {
+      background: #004d40;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: #a7ffeb;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #c8facc;
+    }
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+      background: #ffffffcc;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+    h2 {
+      color: #00695c;
+      margin-top: 0;
+      font-weight: 600;
+      border-bottom: 3px solid #00796b;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.2rem;
+    }
+    /* Struktur Kepengurusan */
+    .struktur-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .struktur-card {
+      background: #e0f2f1;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .struktur-card:hover {
+      background-color: #b2dfdb;
+    }
+    .struktur-card h3 {
+      margin: 0.4rem 0 0.2rem;
+      color: #004d40;
+    }
+    .struktur-card p {
+      margin: 0;
+      font-style: italic;
+      color: #004d4077;
+    }
+    /* Jadwal */
+    table.schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.1rem;
+    }
+    table.schedule-table th,
+    table.schedule-table td {
+      padding: 0.75rem 1rem;
+      border: 1px solid #b2dfdb;
+      text-align: left;
+      background: #e0f7fa;
+      color: #004d40;
+    }
+    table.schedule-table th {
+      background: #00796b;
+      color: white;
+    }
+    /* Dokumentasi Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      object-fit: cover;
+      height: 150px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+    /* Statistik Cards */
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .stat-card {
+      background: #004d40;
+      color: #a7ffeb;
+      border-radius: 12px;
+      padding: 2rem;
+      flex: 1 1 200px;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,77,64,0.4);
+      transition: background-color 0.3s ease;
+    }
+    .stat-card:hover {
+      background-color: #00796b;
+      box-shadow: 0 10px 25px rgba(0,121,107,0.7);
+    }
+    .stat-card h3 {
+      margin: 0 0 0.5rem;
+      font-weight: 600;
+      font-size: 1.8rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    .stat-card p {
+      margin: 0;
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 500;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #004d40;
+      color: #a7ffeb;
+      font-weight: 500;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .stats-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Posyandu Melati 2 Kelurahan Mawang</h1>
+    <p>Pelayanan Terpadu Kesehatan Ibu dan Anak</p>
+  </header>
+  <nav>
+    <a href="#struktur">Struktur Kepengurusan</a>
+    <a href="#jadwal">Jadwal Operasional</a>
+    <a href="#dokumentasi">Dokumentasi Kegiatan</a>
+    <a href="#statistik">Statistik</a>
+  </nav>
+  <main>
+    <section id="struktur">
+      <h2>Struktur Kepengurusan</h2>
+      <div class="struktur-list">
+        <div class="struktur-card">
+          <h3>Amirah Sari</h3>
+          <p>Ketua Posyandu</p>
+        </div>
+        <div class="struktur-card">
+          <h3>Rina Kusuma</h3>
+          <p>Sekretaris</p>
+        </div>
+        <div class="struktur-card">
+          <h3>Dewi Lestari</h3>
+          <p>Bendahara</p>
+        </div>
+        <div class="struktur-card">
+          <h3>Siti Nurhaliza</h3>
+          <p>Koordinator Kader 1</p>
+        </div>
+        <div class="struktur-card">
+          <h3>Hendra Saputra</h3>
+          <p>Koordinator Kader 2</p>
+        </div>
+        <div class="struktur-card">
+          <h3>Bayu Prasetyo</h3>
+          <p>Petugas Imunisasi</p>
+        </div>
+        <div class="struktur-card">
+          <h3>Wulan Kartika</h3>
+          <p>Petugas Penimbangan</p>
+        </div>
+        <div class="struktur-card">
+          <h3>Lina Marlina</h3>
+          <p>Petugas Konseling</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="jadwal">
+      <h2>Jadwal Operasional</h2>
+      <table class="schedule-table" aria-label="Jadwal operasional posyandu">
+        <thead>
+          <tr>
+            <th>Hari</th>
+            <th>Jam Operasional</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Senin</td>
+            <td>08:00 - 11:00</td>
+          </tr>
+          <tr>
+            <td>Rabu</td>
+            <td>08:00 - 11:00</td>
+          </tr>
+          <tr>
+            <td>Jumat</td>
+            <td>08:00 - 11:00</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><em>Harap membawa Kartu Kesehatan pada setiap kunjungan.</em></p>
+    </section>
+
+    <section id="dokumentasi">
+      <h2>Dokumentasi Kegiatan</h2>
+      <div class="gallery-grid">
+        <img src="https://source.unsplash.com/400x300/?health,clinic" alt="Kegiatan Posyandu 1" />
+        <img src="https://source.unsplash.com/400x300/?family,health" alt="Kegiatan Posyandu 2" />
+        <img src="https://source.unsplash.com/400x300/?child,health" alt="Kegiatan Posyandu 3" />
+        <img src="https://source.unsplash.com/400x300/?medical,campaign" alt="Kegiatan Posyandu 4" />
+        <img src="https://source.unsplash.com/400x300/?community,health" alt="Kegiatan Posyandu 5" />
+        <img src="https://source.unsplash.com/400x300/?pregnancy,care" alt="Kegiatan Posyandu 6" />
+      </div>
+      <p style="margin-top:1rem; font-style: italic;">Foto-foto kegiatan Posyandu Melati 2 Kelurahan Mawang</p>
+    </section>
+
+    <section id="statistik">
+      <h2>Statistik</h2>
+      <div class="stats-container" role="list">
+        <div class="stat-card" role="listitem" aria-label="Jumlah ibu hamil">
+          <h3>35</h3>
+          <p>Jumlah Ibu Hamil</p>
+        </div>
+        <div class="stat-card" role="listitem" aria-label="Jumlah balita">
+          <h3>62</h3>
+          <p>Jumlah Balita</p>
+        </div>
+        <div class="stat-card" role="listitem" aria-label="Jumlah wanita usia subur">
+          <h3>128</h3>
+          <p>Jumlah Wanita Usia Subur</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2024 Posyandu Melati 2 Kelurahan Mawang - Semua Hak Dilindungi
+  </footer>
+</body>
+</html>
+
